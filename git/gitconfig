@@ -34,6 +34,12 @@
 
     # Display the number of commits per author in numerical order
     who = shortlog -sn --
+    
+    # Status
+    st = status
+    
+    # Branch
+    br = branch
 
 [color]
     # color opts: normal, black, red, green, yellow, blue, magenta, cyan, or white
