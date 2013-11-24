@@ -1,4 +1,4 @@
-# Dotfiles (Nicolas Gallagher)
+# Dotfiles (Pallavi Anderson)
 
 My OS X dotfiles.
 
@@ -10,7 +10,7 @@ Tools](https://developer.apple.com/downloads) and may overwrite existing
 dotfiles in your HOME and `.vim` directories.
 
 ```bash
-$ bash -c "$(curl -fsSL raw.github.com/necolas/dotfiles/master/bin/dotfiles)"
+$ bash -c "$(curl -fsSL raw.github.com/pkaushik/dotfiles/master/bin/dotfiles)"
 ```
 
 N.B. If you wish to fork this project and maintain your own dotfiles, you must
@@ -77,6 +77,7 @@ Node packages:
 * [bower](http://twitter.github.com/bower/)
 * [grunt](http://gruntjs.com/)
 * [jshint](http://www.jshint.com/)
+* [meteorite](https://github.com/oortcloud/meteorite/)
 
 Vim plugins:
 
