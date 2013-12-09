@@ -29,6 +29,7 @@ run_brew() {
             'phantomjs'
             'tree'
             'wget'
+						'heroku'
         )
 
         for index in ${!desired_formulae[*]}
