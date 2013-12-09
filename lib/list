@@ -4,22 +4,23 @@ run_list() {
 
 cat <<EOT
 
-OS X dotfiles - Nicolas Gallagher - http://nicolasgallagher.com/
+OS X dotfiles - Pallavi Anderson
 
 Additional software to install
 
 Browsers:
     Firefox
     Google Chrome
-    Opera
 
 Development:
     Filezilla
     iTerm 2
     ImageAlpha
     ImageOptim
+		TextMate
     VirtualBox
     XAMPP
+		XCode
 
 Other:
     Alfred
@@ -30,6 +31,7 @@ Other:
     LimeChat
     Network Connect
     Skype
+		Solarized themes
     uTorrent
     VLC
 EOT
