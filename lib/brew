@@ -30,6 +30,7 @@ run_brew() {
             'tree'
             'wget'
 						'heroku'
+            'git-flow'
         )
 
         for index in ${!desired_formulae[*]}
