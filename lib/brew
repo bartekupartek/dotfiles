@@ -13,6 +13,11 @@ run_brew() {
         # Upgrade any already-installed formulae
         brew upgrade
         [[ $? ]] && e_success "Done"
+        
+        e_header "Tapping Homebrew science formulae..."
+        # Import the scientific computing packages
+        brew tap homebrew/science
+        [[ $? ]] && e_success "Done"
 
         e_header "Checking status of desired Homebrew formulae..."
         local list_formulae
@@ -31,6 +36,7 @@ run_brew() {
             'wget'
 						'heroku'
             'git-flow'
+            'gfortran'
         )
 
         for index in ${!desired_formulae[*]}

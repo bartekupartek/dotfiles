@@ -21,7 +21,11 @@ Development:
     VirtualBox
     XAMPP
 		XCode
-
+    RVM: $ \curl -L https://get.rvm.io | bash -s stable --rails --autolibs=enable
+    Eclipse
+      JavaSE
+    Octave: http://wiki.octave.org/Octave_for_MacOS_X#Binary_installer_for_OSX_10.9.1 
+  
 Other:
     Alfred
     Divvy
@@ -34,7 +38,6 @@ Other:
 		Solarized themes
     uTorrent
     VLC
-    RVM: $ \curl -L https://get.rvm.io | bash -s stable --rails --autolibs=enable
 EOT
 
 }
