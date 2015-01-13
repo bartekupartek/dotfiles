@@ -4,6 +4,7 @@ DOTFILES_DIRECTORY="${HOME}/.dotfiles"
 DOTFILES_TARBALL_PATH="https://github.com/pkaushik/dotfiles/tarball/master"
 DOTFILES_GIT_REMOTE="https://github.com/pkaushik/dotfiles"
 
+
 # If missing, download and extract the dotfiles repository
 if [[ ! -d ${DOTFILES_DIRECTORY} ]]; then
     printf "$(tput setaf 7)Downloading dotfiles...\033[m\n"
@@ -123,9 +124,10 @@ mirrorfiles() {
     # Create the necessary symbolic links between the `.dotfiles` and `HOME`
     # directory. The `bash_profile` sources other files directly from the
     # `.dotfiles` repository.
-    link "bash/bashrc"        ".bashrc"
-    link "bash/bash_profile"  ".bash_profile"
-    link "bash/inputrc"       ".inputrc"
+    link "shell/bashrc"       ".bashrc"
+    link "shell/bash_profile" ".bash_profile"
+    link "shell/curlrc"       ".curlrc"
+    link "shell/inputrc"      ".inputrc"
     link "git/gitattributes"  ".gitattributes"
     link "git/gitignore"      ".gitignore"
     link "vim"                ".vim"

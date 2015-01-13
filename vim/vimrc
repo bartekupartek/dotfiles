@@ -21,6 +21,8 @@ if has("autocmd")
     autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
     " Automatically strip trailing whitespace on file save
     autocmd BufWritePre *.css,*.html,*.js,*.json,*.md,*.php,*.py,*.rb,*.scss,*.sh,*.txt :call StripTrailingWhitespace()
+    " Don't treat json as javascript
+    autocmd BufRead,BufNewFile *.json set filetype=json
 endif
 
 if has("syntax")
@@ -94,22 +96,20 @@ set ttyfast
 " Use UTF-8 without BOM
 set encoding=utf-8 nobomb
 
-" Use line wrapping
-set wrap
-" Use 4 spaces for indentation
-set shiftwidth=4
-" Use 4 spaces for soft tab
-set softtabstop=4
-" Use 4 spaces for tab
-set tabstop=4
+" No line wrapping
+set nowrap
+" Use 2 spaces for indentation
+set shiftwidth=2
+" Use 2 spaces for soft tab
+set softtabstop=2
+" Use 2 spaces for tab
+set tabstop=2
 " Expand tab to spaces
 set expandtab
 " Enable line numbers
 set number
 " Highlight current line
 set cursorline
-" Increase default number of lines
-set lines=40
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 " Don’t reset cursor to start of line when moving around.

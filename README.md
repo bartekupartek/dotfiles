@@ -63,19 +63,22 @@ Homebrew formulae:
 * GNU core utilities
 * [git](http://git-scm.com/)
 * [ack](http://betterthangrep.com/)
+* bash (latest version)
 * [bash-completion](http://bash-completion.alioth.debian.org/)
-* jpeg
+* [ffmpeg](http://ffmpeg.org/)
+* [graphicsmagick](http://www.graphicsmagick.org/)
+* [jpeg](https://en.wikipedia.org/wiki/Libjpeg)
 * [macvim](http://code.google.com/p/macvim/)
 * [node](http://nodejs.org/)
 * [optipng](http://optipng.sourceforge.net/)
 * [phantomjs](http://phantomjs.org/)
+* [rsync](https://rsync.samba.org/) (latest version, rather than the out-dated OS X installation)
 * [tree](http://mama.indstate.edu/users/ice/tree/)
 * [wget](http://www.gnu.org/software/wget/)
 
 Node packages:
 
-* [bower](http://twitter.github.com/bower/)
-* [grunt](http://gruntjs.com/)
+* [gify](https://github.com/visionmedia/node-gify)
 * [jshint](http://www.jshint.com/)
 * [meteorite](https://github.com/oortcloud/meteorite/)
 
@@ -83,24 +86,13 @@ Vim plugins:
 
 * [ctrlp.vim](https://github.com/kien/ctrlp.vim)
 * [html5.vim](https://github.com/othree/html5.vim)
-* [mustache.vim](https://github.com/juvenn/mustache.vim)
 * [syntastic](https://github.com/scrooloose/syntastic)
 * [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
 * [vim-git](https://github.com/tpope/vim-git)
-* [vim-haml](https://github.com/tpope/vim-haml)
 * [vim-javascript](https://github.com/pangloss/vim-javascript)
-* [vim-less](https://github.com/groenewege/vim-less)
 * [vim-markdown](https://github.com/tpope/vim-markdown)
+* [vim-mustache-handlebars](https://github.com/mustache/vim-mustache-handlebars)
 * [vim-pathogen](https://github.com/tpope/vim-pathogen)
-
-N.B. If your pre-existing Homebrew installation is not in `/usr/local` then you
-must prepend your custom installation's `bin` to the PATH in
-`.bash_profile.local`:
-
-```bash
-# Add `brew` command's custom location to PATH
-PATH="/opt/acme/bin:$PATH"
-```
 
 ### Custom OS X defaults
 
@@ -113,10 +105,10 @@ $ osxdefaults
 
 ### Bootable backup-drive script
 
-These dotfiles include a script that will incrementally back up your data to an
-external, bootable clone of your computer's internal drive. First, make sure
-that the value of `DST` in the `bin/backup` script matches the name of your
-backup-drive. Then run the following command:
+These dotfiles include a script that uses `rsync` to incrementally back up your
+data to an external, bootable clone of your computer's internal drive. First,
+make sure that the value of `DST` in the `bin/backup` script matches the name
+of your backup-drive. Then run the following command:
 
 ```bash
 $ backup
@@ -163,14 +155,14 @@ Screenshot:
 
 ![](http://i.imgur.com/DSJ1G.png)
 
-### Local and private configurations
+### Local/private Bash and Vim configuration
 
 Any special-case Vim directives local to a machine should be stored in a
-`.vimrc.local` file on that machine. The directives will then be automatically
+`~/.vimrc.local` file on that machine. The directives will then be automatically
 imported into your master `.vimrc`.
 
-Any private and custom commands should be stored in a `~/.bash_profile.local`
-file. Any commands included in this file will not be under version control or
+Any private and custom Bash commands and configuration should be placed in a
+`~/.bash_profile.local` file. This file will not be under version control or
 committed to a public repository. If `~/.bash_profile.local` exists, it will be
 sourced for inclusion in `bash_profile`.
 
@@ -191,11 +183,24 @@ GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 # Set the credentials (modifies ~/.gitconfig)
 git config --global user.name "$GIT_AUTHOR_NAME"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
+
+# Aliases
+alias code="cd ~/Code"
 ```
 
-The `git/gitconfig` file is copied to `~/.gitconfig`, so any private git
-configuration specified in `~/.bash_profile.local` will not be committed to
+N.B. Because the `git/gitconfig` file is copied to `~/.gitconfig`, any private
+git configuration specified in `~/.bash_profile.local` will not be committed to
 your dotfiles repository.
+
+### Custom location for Homebrew installation
+
+If your Homebrew installation is not in `/usr/local` then you must prepend your
+custom installation's `bin` to the PATH in a file called `~/.dotfilesrc`:
+
+```bash
+# Add `brew` command's custom location to PATH
+PATH="/opt/acme/bin:$PATH"
+```
 
 
 ## Adding new git submodules
@@ -254,3 +259,5 @@ Inspiration and code was taken from many sources, including:
   [https://github.com/gf3/dotfiles](https://github.com/gf3/dotfiles)
 * [@cowboy](https://github.com/cowboy) (Ben Alman)
   [https://github.com/cowboy/dotfiles](https://github.com/cowboy/dotfiles)
+* [@alrra](https://github.com/alrra) (Cãtãlin Mariş)
+  [https://github.com/alrra/dotfiles](https://github.com/alrra/dotfiles)
